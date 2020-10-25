@@ -39,7 +39,7 @@ const TimeAndCapacity = (props) => {
         <Grid item sm={3} xs={12}>
           <FormikField
             label="Attendant Cap"
-            name="attendants"
+            name= "Attendants"
             error={props.errorsAttendants}
             touch={props.touchedAttendants}
           />
@@ -47,7 +47,6 @@ const TimeAndCapacity = (props) => {
       </Grid >
     </div>
   )
-
   return content
 }
 

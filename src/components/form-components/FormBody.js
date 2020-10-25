@@ -46,6 +46,9 @@ const FormBody = (props) => {
                                 imgUpload={props.imgUpload}
                                 fileName={props.fileName}
                                 onChange={props.onChange}
+                                errorsEventType={errors.event_type}
+                                touchedEventType={touched.event_type}
+
                             />
                             <div>
                                 {props.children}

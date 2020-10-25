@@ -442,6 +442,15 @@ class EventFormDesktop extends React.Component {
     const db = firebase.firestore();
     const newEventRef = db.collection("events").doc();
     data["approved"] = false;
+    /*
+    --------- event type and faculty approved --------
+    if (data['event_type'] === "social") {
+      data['facultyApproved'] = true;
+    }
+    else if (data['event_type'] === "faculty") {
+      data['facultyApproved'] = false;
+    }
+    */
     data["start_date"] = data["start_date"].toString();
     data["end_date"] = data["end_date"].toString();
     const from = data["email"];

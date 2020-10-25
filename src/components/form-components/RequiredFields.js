@@ -32,6 +32,8 @@ const RequiredFields = (props) => {
         imgUpload={props.imgUpload}
         fileName={props.fileName}
         onChange={props.onChange}
+        errorEventType={props.event_type}
+        touchedEventType={props.event_type}
       />
       <TimeAndCapacity
         timezones={props.timezones}
