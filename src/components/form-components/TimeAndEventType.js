@@ -1,13 +1,21 @@
 import React from 'react';
 import { Field } from "formik"
-import FormikField from "../form-components/FormikField"
-
 import { Select } from "material-ui-formik-components/Select";
 import { DateTimePicker } from "formik-material-ui-pickers";
 import Grid from '@material-ui/core/Grid';
 
+const eventOptions = [
+  {
+    value: 'social',
+    label: 'Social Event'
+  },
+  {
+    value: 'faculty',
+    label: 'Faculty Event'
+  }
+]
 
-const TimeAndCapacity = (props) => {
+const TimeAndEventType = (props) => {
   const content = (
     <div>
       <Grid container spacing={2}>
@@ -37,12 +45,15 @@ const TimeAndCapacity = (props) => {
           />
         </Grid>
         <Grid item sm={3} xs={12}>
-          <FormikField
-            label="Attendant Cap"
-            name= "Attendants"
-            error={props.errorsAttendants}
-            touch={props.touchedAttendants}
-          />
+            <Field
+                name="event_type"
+                label="Event Type"
+                options={eventOptions}
+                component={Select}
+                required
+                error={props.errorsEventType}
+                touch={props.touchedEventType}
+            />
         </Grid>
       </Grid >
     </div>
@@ -50,4 +61,4 @@ const TimeAndCapacity = (props) => {
   return content
 }
 
-export default TimeAndCapacity
+export default TimeAndEventType

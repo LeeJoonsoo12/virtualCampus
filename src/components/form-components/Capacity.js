@@ -4,11 +4,6 @@ import classNames from "classnames";
 import Grid from '@material-ui/core/Grid';
 import FormikField from "../form-components/FormikField"
 
-import { Field } from "formik"
-
-import { Select } from "material-ui-formik-components/Select";
-
-
 const useStyles = makeStyles(() => ({
   root: {
     fontFamily: "Poppins",
@@ -22,25 +17,21 @@ const useStyles = makeStyles(() => ({
   }
 }))
 
-
-
-const EntryDetails = (props) => {
+const Capacity = (props) => {
   const classes = useStyles()
 
-  
   return (
     <div style={{ margin: "15px 0 0 0" }}>
       <div className={classNames(classes.root, classes.title)}>
-        {props.title}
+        Capacity&nbsp;
       </div>
       <Grid container spacing={2}>
-        <Grid item sm={12} xs={12}>
+        <Grid item sm={3} xs={12}>
           <FormikField
-            label={props.entryTitle}
-            name="title"
-            error={props.errorTitle}
-            touch={props.touchedTitle}
-            required
+            label="Attendant Cap"
+            name= "Attendants"
+            error={props.errorsAttendants}
+            touch={props.touchedAttendants}
           />
         </Grid>
       </Grid >
@@ -48,4 +39,4 @@ const EntryDetails = (props) => {
   )
 }
 
-export default EntryDetails
+export default Capacity
