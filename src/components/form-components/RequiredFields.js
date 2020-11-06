@@ -32,11 +32,11 @@ const RequiredFields = (props) => {
         imgUpload={props.imgUpload}
         fileName={props.fileName}
         onChange={props.onChange}
-        errorEventType={props.event_type}
-        touchedEventType={props.event_type}
       />
-      <TimeAndCapacity
+      <TimeAndEventType
         timezones={props.timezones}
+        errorEventType={errors.event_type}
+        touchedEventType={touched.event_type}
       />
       <Tags
         tags={['Activism', 'COVID', 'Education', 'Health', 'Freshman', 'Social']}
