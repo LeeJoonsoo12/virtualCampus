@@ -321,6 +321,17 @@ let getTimezoneName = function (loc = getCurrentLocationForTimeZone(), dstN = nu
 
 const optionsTZ = getTimezoneOptions();
 
+const eventOptions = [
+  {
+    value: 'social',
+    label: 'Social Event'
+  },
+  {
+    value: 'faculty',
+    label: 'Faculty Event'
+  }
+]
+
 let imgurLinkOutside = ""
 const default_img = "https://i.imgur.com/GP66BiO.png"
 let exampleEvent = {
@@ -428,6 +439,12 @@ class EventFormMobile extends React.Component {
     const db = firebase.firestore();
     const newEventRef = db.collection("events").doc();
     data["approved"] = false;
+    if (data['event_type'] === "social") {
+      data['facultyApproved'] = true;
+    }
+    else if (data['event_type'] === "faculty") {
+      data['facultyApproved'] = false;
+    }
     data["start_date"] = data["start_date"].toString();
     data["end_date"] = data["end_date"].toString();
     const from = data["email"];
@@ -781,7 +798,7 @@ class EventFormMobile extends React.Component {
                       />
                       <div>
                         <Grid container spacing={2}>
-                          <Grid item sm={4} xs={6}>
+                          <Grid item sm={3} xs={6}>
                             <div style={{ margin: "16px 0 8px" }}>
                               <Field
                                 component={DateTimePicker}
@@ -791,7 +808,7 @@ class EventFormMobile extends React.Component {
                               />
                             </div>
                           </Grid>
-                          <Grid item sm={4} xs={6}>
+                          <Grid item sm={3} xs={6}>
                             <div style={{ margin: "16px 0 8px" }}>
                               <Field
                                 component={DateTimePicker}
@@ -801,7 +818,7 @@ class EventFormMobile extends React.Component {
                               />
                             </div>
                           </Grid>
-                          <Grid item sm={4} xs={12}>
+                          <Grid item sm={3} xs={12}>
                             <Field
                               name="timezone"
                               label="Select Timezone"
@@ -810,6 +827,20 @@ class EventFormMobile extends React.Component {
                               required
                             />
                           </Grid>
+
+                          <Grid item sm={3} xs={12}>
+                              <Field
+                                  name="event_type"
+                                  label="Event Type"
+                                  options={eventOptions}
+                                  component={Select}
+                                  required
+                                  error={errors.event_type}
+                                  touch={touched.event_type}
+                              />
+                          </Grid>
+
+
                         </Grid>
                         <br />
                         <Field
