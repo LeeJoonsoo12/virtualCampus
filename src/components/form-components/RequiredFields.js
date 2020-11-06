@@ -1,7 +1,7 @@
 import React from 'react';
 import ContactInfo from "../form-components/ContactInfo"
 import EntryDetails from "../form-components/EntryDetails"
-import TimeAndCapacity from "./TimeAndEventType"
+import TimeAndEventType from "./TimeAndEventType"
 import Tags from './Tags'
 
 import { Field } from "formik"
