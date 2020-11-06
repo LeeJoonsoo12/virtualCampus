@@ -2,7 +2,7 @@ import React from 'react';
 import AdditionalInfo from '../form-components/AdditionalInfo'
 import WebsiteAndZoom from "../form-components/WebsiteAndZoom"
 import CoverImage from "../form-components/CoverImage"
-
+import Capacity from "../form-components/Capacity"
 import { makeStyles } from '@material-ui/core/styles'
 import classNames from "classnames";
 
@@ -26,6 +26,10 @@ const AdvancedFields = (props) => {
 
   const content = (
     <div style={{ width: "100%" }}>
+       <Capacity
+        errors={errors}
+        touched={touched}
+        />
       <CoverImage
         errors={errors}
         touched={touched}

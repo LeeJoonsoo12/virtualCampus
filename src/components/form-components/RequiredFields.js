@@ -1,7 +1,7 @@
 import React from 'react';
 import ContactInfo from "../form-components/ContactInfo"
 import EntryDetails from "../form-components/EntryDetails"
-import TimeAndCapacity from "../form-components/TimeAndCapacity"
+import TimeAndEventType from "./TimeAndEventType"
 import Tags from './Tags'
 
 import { Field } from "formik"
@@ -33,10 +33,10 @@ const RequiredFields = (props) => {
         fileName={props.fileName}
         onChange={props.onChange}
       />
-      <TimeAndCapacity
+      <TimeAndEventType
         timezones={props.timezones}
-        errorAttendants={props.attendants}
-        touchedAttendants={props.attendants}
+        errorEventType={errors.event_type}
+        touchedEventType={touched.event_type}
       />
       <Tags
         tags={['Activism', 'COVID', 'Education', 'Health', 'Freshman', 'Social']}
