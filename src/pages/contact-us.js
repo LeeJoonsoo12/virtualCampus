@@ -115,7 +115,7 @@ class contactUs extends React.Component {
                             <GridContainer style = {{ display: "flex", flexDirection: "column", alignItems: "left" }}>
                             <GridItem xs = { 18 } sm = { 18 } md = { 10 }>
                                 <CustomTextField
-                                    required placeholder = "Name *" 
+                                    placeholder = "Name *" 
                                     id = "material"
                                     style = {{textAlign: "left", width:'659px'}}
                                     formControlProps = {
@@ -143,7 +143,7 @@ class contactUs extends React.Component {
                             <div style = {{ textAlign: "left", marginTop: 10 }}></div>
                             <GridItem xs = { 18 } sm = { 18 } md = { 10 }>
                                 <CustomTextField
-                                    placeholder = "Subject *" required
+                                    placeholder = "Subject *" 
                                     id = "material"
                                     
                                     formControlProps = {
@@ -163,6 +163,7 @@ class contactUs extends React.Component {
                                             this.setState({ subject: val.target.value });
                                         }
                                     }
+                                    required
                                 />
                                 <br/>
                             </GridItem> <br/>
