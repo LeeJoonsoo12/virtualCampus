@@ -68,7 +68,6 @@ class contactUs extends React.Component {
                                 text = { "FACEBOOK" }
                                 style = {{fontFamily: "Poppins", fontSize: "16px"}}
                                 startIcon={<FacebookIcon style = {{marginLeft: 25, marginRight: -15}}/>}
-                                
                                 color = { "blue" }
                                 size = { "large" }
                                 rounded = { "10px" }
@@ -136,7 +135,7 @@ class contactUs extends React.Component {
                                             this.setState({ name: val.target.value });
                                         }
                                     }
-                                    // required
+                                    required
                                 />
                                 <br/>
                             </GridItem> <br/> 
